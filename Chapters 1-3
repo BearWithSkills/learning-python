@@ -1,0 +1,56 @@
+The first two chapters go over the raw basics of strings, f-strings, setting variables, and funfacts about python.
+I'll spare anyone reading this by skipping to chapter three, where I learned functions.
+
+1.) First function:
+def area_of_circle(radius):
+    pi = 3.14
+    area = pi * radius * radius
+    return area
+  
+  
+sword_length = 1.0
+spear_length = 2.0
+
+2.) Multiple parameters:
+def triple_attack(damage_one, damage_two, damage_three):
+    total = damage_one + damage_two + damage_three
+    return total
+
+3.) Printing vs returning:
+def get_title(first_name, last_name, job):
+    title = first_name + " " + last_name + " the " + job
+    print(title)
+
+4.) Were to declare functions:
+main()
+def main():
+    print("Fantasy Quest is booting up...")
+    print("Game is running!")
+
+5.) A little more practice:
+5.1) 
+def to_celsius(f):
+    degrees_c = 5 / 9 * (f - 32)
+    return degrees_c
+5.2) 
+def hours_to_seconds(hours):
+    return hours * 60 * 60
+
+6.) Multiple return values:
+def become_warrior(first_name, last_name, power):
+    title = f"{first_name} {last_name} the warrior"
+    new_power = power + 1
+    return title, new_power
+
+7.) Two end of module challenges:
+def curse(weapon_damage):
+    lesser_cursed = weapon_damage * 0.5
+    greater_cursed = weapon_damage * 0.25
+    return lesser_cursed, greater_cursed
+
+def enchant_and_attack(target_health, damage, weapon):
+    enchanted_damage = damage + 10
+    new_health = target_health - enchanted_damage
+    enchanted_weapon = "enchanted " + weapon
+    return enchanted_weapon, new_health
+
