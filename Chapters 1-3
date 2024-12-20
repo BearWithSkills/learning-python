@@ -1,56 +1,58 @@
-The first two chapters go over the raw basics of strings, f-strings, setting variables, and funfacts about python.
-I'll spare anyone reading this by skipping to chapter three, where I learned functions.
+This program went over the following subjects with the context of creating a game: 
+Basics of strings
+F-strings
+Setting variables
+History of python
+Functions
+Scope
+Testing and debugging
+Computing in Python
+Boolean logic
+Loops
+Lists
+Dictionaries
+Sets
+Errors and error handling
 
-1.) First function:
-def area_of_circle(radius):
-    pi = 3.14
-    area = pi * radius * radius
-    return area
-  
-  
-sword_length = 1.0
-spear_length = 2.0
+Here are some of the highlights from learning the fundimentals:
 
-2.) Multiple parameters:
-def triple_attack(damage_one, damage_two, damage_three):
-    total = damage_one + damage_two + damage_three
+(1)
+def calculate_flurry_crit(num_attacks, base_damage):
+    total = 0
+    for i in range(num_attacks):
+        if i == num_attacks - 1:
+            total += base_damage * 4
+        else:
+            total += base_damage * 2
     return total
 
-3.) Printing vs returning:
-def get_title(first_name, last_name, job):
-    title = first_name + " " + last_name + " the " + job
-    print(title)
+(2)
+def reverse_array(items):
+    new_array = []
+    for i in range(len(items) - 1, -1, -1):
+        new_array.append(items[i])
+    return new_array
 
-4.) Were to declare functions:
-main()
-def main():
-    print("Fantasy Quest is booting up...")
-    print("Game is running!")
+(3)
+def handle_get_player_record(player_id):
+    try:
+        return get_player_record(player_id)
+    except IndexError:
+        return "index is too high"
+    except Exception as e:
+        return e
 
-5.) A little more practice:
-5.1) 
-def to_celsius(f):
-    degrees_c = 5 / 9 * (f - 32)
-    return degrees_c
-5.2) 
-def hours_to_seconds(hours):
-    return hours * 60 * 60
+(4) 
+def get_most_common_enemy(enemies_dict):
+    max_so_far = float("-inf")
+    most_common = None
+    for enemy_name in enemies_dict:
+        count = enemies_dict[enemy_name]
+        if count > max_so_far:
+            max_so_far = count
+            most_common = enemy_name
+    return most_common
 
-6.) Multiple return values:
-def become_warrior(first_name, last_name, power):
-    title = f"{first_name} {last_name} the warrior"
-    new_power = power + 1
-    return title, new_power
-
-7.) Two end of module challenges:
-def curse(weapon_damage):
-    lesser_cursed = weapon_damage * 0.5
-    greater_cursed = weapon_damage * 0.25
-    return lesser_cursed, greater_cursed
-
-def enchant_and_attack(target_health, damage, weapon):
-    enchanted_damage = damage + 10
-    new_health = target_health - enchanted_damage
-    enchanted_weapon = "enchanted " + weapon
-    return enchanted_weapon, new_health
-
+(5)
+def remove_duplicates(spells):
+    return list(set(spells))
